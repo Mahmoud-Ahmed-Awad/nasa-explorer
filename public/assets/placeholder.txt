@@ -1,0 +1,91 @@
+# NASA Explorer Assets
+
+This directory contains placeholder files for the NASA Explorer application.
+
+## Recommended Asset Replacements
+
+### 3D Models
+- **rocket.glb**: Place a 3D rocket model here
+  - Recommended sources: NASA 3D models, Sketchfab (CC licensed)
+  - Format: GLTF/GLB
+  - Size: Keep under 5MB for web performance
+
+### Images
+
+#### Mission Images
+- **missions/james-webb.jpg**: James Webb Space Telescope
+- **missions/perseverance.jpg**: Mars Perseverance Rover
+- **missions/artemis-1.jpg**: Artemis I mission
+- **missions/dart.jpg**: DART mission
+- **missions/hubble.jpg**: Hubble Space Telescope
+- **missions/cassini.jpg**: Cassini-Huygens mission
+
+#### Satellite Images
+- **satellites/iss.jpg**: International Space Station
+- **satellites/hubble.jpg**: Hubble Space Telescope
+- **satellites/gps.jpg**: GPS satellite
+- **satellites/landsat.jpg**: Landsat satellite
+- **satellites/starlink.jpg**: Starlink satellite
+
+#### Team Photos
+- **team/sarah-chen.jpg**: Dr. Sarah Chen
+- **team/marcus-rodriguez.jpg**: Marcus Rodriguez
+- **team/aisha-patel.jpg**: Dr. Aisha Patel
+- **team/james-thompson.jpg**: James Thompson
+
+### Recommended Sources
+
+#### NASA Public Domain Images
+- [NASA Image Gallery](https://www.nasa.gov/multimedia/imagegallery/)
+- [NASA 3D Resources](https://nasa3d.arc.nasa.gov/)
+- [NASA Image and Video Library](https://images.nasa.gov/)
+
+#### Free Stock Photos
+- [Unsplash](https://unsplash.com/) - High-quality free photos
+- [Pexels](https://www.pexels.com/) - Free stock photos
+- [Pixabay](https://pixabay.com/) - Free images and videos
+
+#### 3D Models
+- [NASA 3D Resources](https://nasa3d.arc.nasa.gov/)
+- [Sketchfab](https://sketchfab.com/) - Search for NASA or space models
+- [Free3D](https://free3d.com/) - Free 3D models
+
+### Image Specifications
+
+#### Mission Images
+- **Size**: 800x600px minimum
+- **Format**: JPG or WebP
+- **Aspect Ratio**: 4:3 or 16:9
+
+#### Satellite Images
+- **Size**: 400x300px minimum
+- **Format**: JPG or WebP
+- **Aspect Ratio**: 4:3
+
+#### Team Photos
+- **Size**: 300x300px (square)
+- **Format**: JPG or WebP
+- **Style**: Professional headshots
+
+### Usage Notes
+
+1. **Licensing**: Ensure all images are properly licensed for commercial use
+2. **Performance**: Optimize images for web (compress, use WebP when possible)
+3. **Accessibility**: Include alt text for all images
+4. **Responsive**: Consider providing multiple sizes for different screen densities
+
+### Fallback Behavior
+
+The application includes fallback behavior for missing assets:
+- Missing mission images show a rocket emoji (🚀)
+- Missing satellite images show a satellite emoji (🛰️)
+- Missing team photos show astronaut emoji (👨‍🚀)
+- Missing 3D models use fallback geometry
+
+### Development
+
+To add new assets:
+1. Place files in the appropriate subdirectory
+2. Update the JSON data files to reference the new assets
+3. Test the application to ensure assets load correctly
+4. Optimize images for web performance

@@ -1,0 +1,294 @@
+[
+  {
+    "id": "kepler",
+    "name": "Kepler Space Telescope",
+    "type": "Space Observatory",
+    "status": "Retired",
+    "launchYear": 2009,
+    "endYear": 2018,
+    "agency": "NASA",
+    "cost": 600000000,
+    "description": "Revolutionary space telescope that discovered over 2,600 confirmed exoplanets by detecting planetary transits.",
+    "objectives": [
+      "Survey our region of the Milky Way to discover Earth-size and smaller planets",
+      "Determine the percentage of terrestrial and larger planets in or near the habitable zone",
+      "Determine the distribution of sizes and shapes of orbits of these planets",
+      "Estimate how many planets there are in multiple-star systems"
+    ],
+    "achievements": [
+      "Discovered 2,662 confirmed exoplanets",
+      "Found thousands more candidate planets",
+      "Revealed that planets are more common than stars",
+      "Discovered first Earth-size planet in habitable zone"
+    ],
+    "instruments": ["Photometer", "Schmidt telescope"],
+    "imageUrl": "/assets/missions/kepler.jpg",
+    "details": {
+      "orbit": "Earth-trailing heliocentric orbit",
+      "missionDuration": "9.6 years",
+      "dataCollected": "678 gigabytes",
+      "starsObserved": 530506
+    }
+  },
+  {
+    "id": "tess",
+    "name": "TESS (Transiting Exoplanet Survey Satellite)",
+    "type": "Space Observatory",
+    "status": "Active",
+    "launchYear": 2018,
+    "agency": "NASA",
+    "cost": 200000000,
+    "description": "All-sky survey mission discovering transiting exoplanets around nearby bright stars.",
+    "objectives": [
+      "Survey 200,000 of the brightest stars near the sun",
+      "Discover thousands of transiting exoplanets",
+      "Enable follow-up characterization of discovered planets",
+      "Focus on Earth and Super-Earth sized planets"
+    ],
+    "achievements": [
+      "Discovered over 400 confirmed exoplanets",
+      "Identified 6,000+ candidate exoplanets",
+      "Surveyed 75% of the sky in first two years",
+      "Enabled JWST follow-up observations"
+    ],
+    "instruments": ["Four wide-field cameras"],
+    "imageUrl": "/assets/missions/tess.jpg",
+    "details": {
+      "orbit": "Highly elliptical 13.7-day orbit around Earth",
+      "missionDuration": "Extended mission ongoing",
+      "coverage": "85% of the sky",
+      "cadence": "27-day observation sectors"
+    }
+  },
+  {
+    "id": "jwst",
+    "name": "James Webb Space Telescope",
+    "type": "Space Observatory",
+    "status": "Active",
+    "launchYear": 2021,
+    "agency": "NASA/ESA/CSA",
+    "cost": 10000000000,
+    "description": "Most powerful space telescope ever built, observing exoplanet atmospheres and early universe.",
+    "objectives": [
+      "Study exoplanet atmospheres and compositions",
+      "Observe first galaxies formed after Big Bang",
+      "Study star and planet formation",
+      "Investigate dark matter and dark energy"
+    ],
+    "achievements": [
+      "First direct image of exoplanet HIP 65426 b",
+      "Detected water vapor in exoplanet atmospheres",
+      "Discovered most distant galaxies ever observed",
+      "Captured stunning images of nebulae and galaxies"
+    ],
+    "instruments": ["NIRCam", "NIRSpec", "MIRI", "FGS/NIRISS"],
+    "imageUrl": "/assets/missions/jwst.jpg",
+    "details": {
+      "orbit": "Sun-Earth L2 Lagrange point",
+      "mirrorDiameter": "6.5 meters",
+      "wavelengthRange": "0.6 to 28.5 micrometers",
+      "temperature": "-233°C operating temperature"
+    }
+  },
+  {
+    "id": "hubble",
+    "name": "Hubble Space Telescope",
+    "type": "Space Observatory",
+    "status": "Active",
+    "launchYear": 1990,
+    "agency": "NASA/ESA",
+    "cost": 4700000000,
+    "description": "Iconic space telescope that revolutionized astronomy with unprecedented deep space observations.",
+    "objectives": [
+      "Determine the age and expansion rate of the universe",
+      "Study formation and evolution of galaxies",
+      "Understand stellar evolution",
+      "Characterize exoplanet atmospheres"
+    ],
+    "achievements": [
+      "Helped determine universe is 13.8 billion years old",
+      "Discovered dark energy accelerating universe expansion",
+      "Photographed deep field images of distant galaxies",
+      "Detected exoplanet atmospheres and weather"
+    ],
+    "instruments": ["WFC3", "COS", "STIS", "ACS"],
+    "imageUrl": "/assets/missions/hubble.jpg",
+    "details": {
+      "orbit": "Low Earth orbit (540 km altitude)",
+      "mirrorDiameter": "2.4 meters",
+      "observations": "Over 1.5 million",
+      "publications": "19,000+ scientific papers"
+    }
+  },
+  {
+    "id": "gaia",
+    "name": "Gaia",
+    "type": "Space Observatory",
+    "status": "Active",
+    "launchYear": 2013,
+    "agency": "ESA",
+    "cost": 1000000000,
+    "description": "Creating the most accurate 3D map of our galaxy by measuring positions and motions of billions of stars.",
+    "objectives": [
+      "Map 1 billion stars in the Milky Way",
+      "Measure star positions with unprecedented accuracy",
+      "Determine star velocities and properties",
+      "Discover asteroids, exoplanets, and distant quasars"
+    ],
+    "achievements": [
+      "Mapped over 1.8 billion stars",
+      "Created most detailed 3D map of Milky Way",
+      "Discovered thousands of asteroids",
+      "Measured parallax for billions of stars"
+    ],
+    "instruments": ["Two optical telescopes", "Three scientific instruments"],
+    "imageUrl": "/assets/missions/gaia.jpg",
+    "details": {
+      "orbit": "Sun-Earth L2 Lagrange point",
+      "accuracy": "10 microarcseconds",
+      "dataRate": "50 GB per day",
+      "spinPeriod": "6 hours rotation"
+    }
+  },
+  {
+    "id": "cheops",
+    "name": "CHEOPS",
+    "type": "Space Observatory",
+    "status": "Active",
+    "launchYear": 2019,
+    "agency": "ESA",
+    "cost": 50000000,
+    "description": "Characterizing known exoplanets by measuring their sizes with unprecedented precision.",
+    "objectives": [
+      "Measure precise radii of known exoplanets",
+      "Characterize exoplanet densities and compositions",
+      "Study exoplanet atmospheres during transits",
+      "Search for additional planets in known systems"
+    ],
+    "achievements": [
+      "Characterized hundreds of exoplanet transits",
+      "Discovered ultra-hot Jupiter with titanium oxide",
+      "Found exoplanets with extreme temperatures",
+      "Enabled detailed follow-up of TESS discoveries"
+    ],
+    "instruments": ["30 cm telescope with photometer"],
+    "imageUrl": "/assets/missions/cheops.jpg",
+    "details": {
+      "orbit": "Sun-synchronous orbit (700 km altitude)",
+      "precision": "20 parts per million photometric precision",
+      "targets": "Bright stars with known planets",
+      "observationTime": "Flexible scheduling"
+    }
+  },
+  {
+    "id": "spitzer",
+    "name": "Spitzer Space Telescope",
+    "type": "Space Observatory",
+    "status": "Retired",
+    "launchYear": 2003,
+    "endYear": 2020,
+    "agency": "NASA",
+    "cost": 720000000,
+    "description": "Infrared space telescope that revealed hidden universe and characterized exoplanet atmospheres.",
+    "objectives": [
+      "Study the early universe in infrared",
+      "Characterize exoplanet atmospheres",
+      "Observe star and planet formation",
+      "Study galaxies and brown dwarfs"
+    ],
+    "achievements": [
+      "First detection of light from exoplanets",
+      "Discovered TRAPPIST-1 system had 7 planets",
+      "Created infrared maps of exoplanet weather",
+      "Observed most distant galaxies in infrared"
+    ],
+    "instruments": ["IRAC", "MIPS", "IRS"],
+    "imageUrl": "/assets/missions/spitzer.jpg",
+    "details": {
+      "orbit": "Earth-trailing heliocentric orbit",
+      "coolingSystem": "Liquid helium cryostat",
+      "wavelengthRange": "3.6 to 160 micrometers",
+      "missionLength": "16.5 years"
+    }
+  },
+  {
+    "id": "plato",
+    "name": "PLATO",
+    "type": "Space Observatory",
+    "status": "Planned",
+    "launchYear": 2026,
+    "agency": "ESA",
+    "cost": 600000000,
+    "description": "Future mission to discover and characterize Earth-like planets around Sun-like stars.",
+    "objectives": [
+      "Find Earth-like planets in habitable zones",
+      "Characterize host stars with asteroseismology",
+      "Study planetary system architecture",
+      "Measure planet masses and ages"
+    ],
+    "achievements": [],
+    "instruments": ["26 small telescopes", "2 fast cameras"],
+    "imageUrl": "/assets/missions/plato.jpg",
+    "details": {
+      "orbit": "Sun-Earth L2 Lagrange point",
+      "fieldOfView": "2,250 square degrees",
+      "targetStars": "Up to 1 million stars",
+      "missionDuration": "4 years (baseline)"
+    }
+  },
+  {
+    "id": "ariel",
+    "name": "ARIEL",
+    "type": "Space Observatory",
+    "status": "Planned",
+    "launchYear": 2029,
+    "agency": "ESA",
+    "cost": 400000000,
+    "description": "Future mission dedicated to studying exoplanet atmospheres and chemistry.",
+    "objectives": [
+      "Survey 1,000 exoplanet atmospheres",
+      "Determine atmospheric compositions",
+      "Study exoplanet formation and evolution",
+      "Characterize diverse planetary types"
+    ],
+    "achievements": [],
+    "instruments": ["Infrared spectrometer", "Fine guidance system"],
+    "imageUrl": "/assets/missions/ariel.jpg",
+    "details": {
+      "orbit": "Sun-Earth L2 Lagrange point",
+      "wavelengthRange": "0.5 to 7.8 micrometers",
+      "survey": "1,000 exoplanets in 4 years",
+      "spectralResolution": "R~100"
+    }
+  },
+  {
+    "id": "iss",
+    "name": "International Space Station",
+    "type": "Space Station",
+    "status": "Active",
+    "launchYear": 1998,
+    "agency": "NASA/Roscosmos/ESA/JAXA/CSA",
+    "cost": 150000000000,
+    "description": "Largest international space collaboration, serving as microgravity research laboratory.",
+    "objectives": [
+      "Conduct microgravity research",
+      "Study long-term effects of spaceflight on humans",
+      "Develop technologies for deep space exploration",
+      "International cooperation in space"
+    ],
+    "achievements": [
+      "Continuous human presence since 2000",
+      "Over 3,000 research investigations",
+      "270+ individuals from 22 countries visited",
+      "Platform for Earth and space observations"
+    ],
+    "instruments": ["Multiple research laboratories", "Robotic arms", "Solar arrays"],
+    "imageUrl": "/assets/missions/iss.jpg",
+    "details": {
+      "orbit": "Low Earth orbit (408 km altitude)",
+      "speed": "28,000 km/h",
+      "mass": "420,000 kg",
+      "volume": "916 cubic meters pressurized"
+    }
+  }
+]

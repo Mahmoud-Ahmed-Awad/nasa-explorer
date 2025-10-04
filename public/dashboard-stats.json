@@ -1,0 +1,229 @@
+{
+  "stats": [
+    {
+      "id": "missions-explored",
+      "label": "Missions Explored",
+      "value": 12,
+      "icon": "rocket",
+      "color": "from-neon-blue to-cyan-500",
+      "trend": "+3 this month",
+      "percentage": 15
+    },
+    {
+      "id": "exoplanets-discovered",
+      "label": "Exoplanets Discovered",
+      "value": 47,
+      "icon": "satellite",
+      "color": "from-neon-purple to-pink-500",
+      "trend": "+12 this month",
+      "percentage": 34
+    },
+    {
+      "id": "satellites-tracked",
+      "label": "Satellites Tracked",
+      "value": 23,
+      "icon": "satellite",
+      "color": "from-neon-green to-emerald-500",
+      "trend": "+5 this month",
+      "percentage": 28
+    },
+    {
+      "id": "ai-conversations",
+      "label": "AI Conversations",
+      "value": 156,
+      "icon": "gear",
+      "color": "from-neon-orange to-yellow-500",
+      "trend": "+42 this month",
+      "percentage": 87
+    }
+  ],
+  "recentActivity": [
+    {
+      "id": "activity-1",
+      "type": "mission",
+      "title": "Explored James Webb Space Telescope",
+      "description": "Viewed mission details and instruments",
+      "time": "2 hours ago",
+      "timestamp": "2025-10-02T13:24:00Z",
+      "icon": "rocket",
+      "color": "bg-blue-500"
+    },
+    {
+      "id": "activity-2",
+      "type": "exoplanet",
+      "title": "Discovered Kepler-442 b",
+      "description": "Added to your exoplanet collection",
+      "time": "1 day ago",
+      "timestamp": "2025-10-01T15:24:00Z",
+      "icon": "satellite",
+      "color": "bg-purple-500"
+    },
+    {
+      "id": "activity-3",
+      "type": "satellite",
+      "title": "Tracked International Space Station",
+      "description": "Viewed real-time position data",
+      "time": "2 days ago",
+      "timestamp": "2025-09-30T10:30:00Z",
+      "icon": "satellite",
+      "color": "bg-green-500"
+    },
+    {
+      "id": "activity-4",
+      "type": "ai",
+      "title": "Asked about Mars exploration",
+      "description": "Discussed Perseverance rover findings",
+      "time": "3 days ago",
+      "timestamp": "2025-09-29T14:15:00Z",
+      "icon": "gear",
+      "color": "bg-orange-500"
+    },
+    {
+      "id": "activity-5",
+      "type": "mission",
+      "title": "Explored TESS Mission",
+      "description": "Learned about exoplanet survey techniques",
+      "time": "5 days ago",
+      "timestamp": "2025-09-27T09:00:00Z",
+      "icon": "rocket",
+      "color": "bg-blue-500"
+    },
+    {
+      "id": "activity-6",
+      "type": "exoplanet",
+      "title": "Analyzed TRAPPIST-1 e",
+      "description": "Studied habitability parameters",
+      "time": "1 week ago",
+      "timestamp": "2025-09-25T16:45:00Z",
+      "icon": "satellite",
+      "color": "bg-purple-500"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "space-explorer",
+      "title": "Space Explorer",
+      "description": "Explored 10+ missions",
+      "icon": "rocket",
+      "unlocked": true,
+      "unlockedDate": "2025-09-15T12:00:00Z",
+      "progress": 100,
+      "requirement": 10,
+      "category": "missions"
+    },
+    {
+      "id": "exoplanet-hunter",
+      "title": "Exoplanet Hunter",
+      "description": "Discovered 25+ exoplanets",
+      "icon": "telescope",
+      "unlocked": true,
+      "unlockedDate": "2025-09-20T14:30:00Z",
+      "progress": 100,
+      "requirement": 25,
+      "category": "exoplanets"
+    },
+    {
+      "id": "satellite-tracker",
+      "title": "Satellite Tracker",
+      "description": "Tracked 20+ satellites",
+      "icon": "antenna",
+      "unlocked": true,
+      "unlockedDate": "2025-09-18T10:15:00Z",
+      "progress": 100,
+      "requirement": 20,
+      "category": "satellites"
+    },
+    {
+      "id": "ai-conversationalist",
+      "title": "AI Conversationalist",
+      "description": "Had 100+ AI conversations",
+      "icon": "gear",
+      "unlocked": true,
+      "unlockedDate": "2025-09-28T18:45:00Z",
+      "progress": 100,
+      "requirement": 100,
+      "category": "ai"
+    },
+    {
+      "id": "space-scholar",
+      "title": "Space Scholar",
+      "description": "Complete all tutorials",
+      "icon": "astronaut",
+      "unlocked": false,
+      "progress": 60,
+      "requirement": 10,
+      "category": "learning"
+    },
+    {
+      "id": "cosmic-navigator",
+      "title": "Cosmic Navigator",
+      "description": "Visit all sections",
+      "icon": "satellite",
+      "unlocked": false,
+      "progress": 80,
+      "requirement": 12,
+      "category": "exploration"
+    },
+    {
+      "id": "data-analyst",
+      "title": "Data Analyst",
+      "description": "Export 50+ datasets",
+      "icon": "gear",
+      "unlocked": false,
+      "progress": 42,
+      "requirement": 50,
+      "category": "data"
+    },
+    {
+      "id": "star-gazer",
+      "title": "Star Gazer",
+      "description": "View 100+ celestial objects",
+      "icon": "sun",
+      "unlocked": false,
+      "progress": 35,
+      "requirement": 100,
+      "category": "exploration"
+    }
+  ],
+  "quickLinks": [
+    {
+      "title": "Explore Missions",
+      "description": "Discover space missions",
+      "path": "/missions",
+      "icon": "rocket",
+      "color": "bg-gradient-to-r from-blue-500 to-cyan-500"
+    },
+    {
+      "title": "Find Exoplanets",
+      "description": "Search for exoplanets",
+      "path": "/exoplanets",
+      "icon": "satellite",
+      "color": "bg-gradient-to-r from-purple-500 to-pink-500"
+    },
+    {
+      "title": "Track Satellites",
+      "description": "Monitor satellites",
+      "path": "/satellites",
+      "icon": "satellite",
+      "color": "bg-gradient-to-r from-green-500 to-emerald-500"
+    },
+    {
+      "title": "AI Assistant",
+      "description": "Ask space questions",
+      "path": "/ai",
+      "icon": "gear",
+      "color": "bg-gradient-to-r from-orange-500 to-yellow-500"
+    }
+  ],
+  "userProfile": {
+    "name": "Space Explorer",
+    "level": 7,
+    "xp": 3450,
+    "nextLevelXp": 5000,
+    "joinDate": "2025-06-15T00:00:00Z",
+    "totalMissions": 12,
+    "totalExoplanets": 47,
+    "totalSatellites": 23,
+    "favoriteCategory": "exoplanets"
+  }
+}

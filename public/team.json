@@ -1,0 +1,173 @@
+[
+  {
+    "id": "member-1",
+    "name": "Dr. Sarah Chen",
+    "role": "Lead Astrophysicist",
+    "department": "Exoplanet Research",
+    "email": "s.chen@nasa.gov",
+    "bio": "Leading expert in exoplanet detection and characterization with 15 years of experience in space telescope operations.",
+    "expertise": [
+      "Transit Photometry",
+      "Exoplanet Atmospheres",
+      "Data Analysis",
+      "Mission Planning"
+    ],
+    "education": "Ph.D. in Astrophysics, MIT",
+    "publications": 87,
+    "imageUrl": "/assets/team/sarah-chen.jpg",
+    "social": {
+      "twitter": "@DrSarahChen",
+      "linkedin": "sarah-chen-phd",
+      "orcid": "0000-0002-1234-5678"
+    }
+  },
+  {
+    "id": "member-2",
+    "name": "Dr. Michael Rodriguez",
+    "role": "Senior Data Scientist",
+    "department": "AI & Machine Learning",
+    "email": "m.rodriguez@nasa.gov",
+    "bio": "Specialist in applying machine learning algorithms to astronomical data for exoplanet discovery.",
+    "expertise": [
+      "Machine Learning",
+      "Neural Networks",
+      "Signal Processing",
+      "Big Data Analytics"
+    ],
+    "education": "Ph.D. in Computer Science, Stanford",
+    "publications": 54,
+    "imageUrl": "/assets/team/michael-rodriguez.jpg",
+    "social": {
+      "twitter": "@MRodriguezML",
+      "linkedin": "michael-rodriguez-ai",
+      "github": "mrodriguez-nasa"
+    }
+  },
+  {
+    "id": "member-3",
+    "name": "Dr. Emily Watanabe",
+    "role": "Mission Operations Engineer",
+    "department": "Spacecraft Operations",
+    "email": "e.watanabe@nasa.gov",
+    "bio": "Expert in spacecraft operations with extensive experience in Kepler, TESS, and JWST missions.",
+    "expertise": [
+      "Mission Operations",
+      "Spacecraft Systems",
+      "Flight Dynamics",
+      "Telemetry Analysis"
+    ],
+    "education": "Ph.D. in Aerospace Engineering, Caltech",
+    "publications": 42,
+    "imageUrl": "/assets/team/emily-watanabe.jpg",
+    "social": {
+      "twitter": "@EmilyWatanabePhD",
+      "linkedin": "emily-watanabe-aerospace"
+    }
+  },
+  {
+    "id": "member-4",
+    "name": "Dr. James O'Brien",
+    "role": "Planetary Scientist",
+    "department": "Habitability Studies",
+    "email": "j.obrien@nasa.gov",
+    "bio": "Focused on assessing exoplanet habitability and studying planetary atmospheres and climates.",
+    "expertise": [
+      "Planetary Habitability",
+      "Atmospheric Science",
+      "Spectroscopy",
+      "Climate Modeling"
+    ],
+    "education": "Ph.D. in Planetary Science, University of Arizona",
+    "publications": 68,
+    "imageUrl": "/assets/team/james-obrien.jpg",
+    "social": {
+      "twitter": "@JamesOBrienPhD",
+      "linkedin": "james-obrien-planetary"
+    }
+  },
+  {
+    "id": "member-5",
+    "name": "Dr. Priya Patel",
+    "role": "Telescope Scientist",
+    "department": "Instrumentation",
+    "email": "p.patel@nasa.gov",
+    "bio": "Specializes in developing and calibrating advanced instruments for space telescopes.",
+    "expertise": [
+      "Optical Systems",
+      "Detector Technology",
+      "Calibration",
+      "Instrument Design"
+    ],
+    "education": "Ph.D. in Optical Engineering, University of Rochester",
+    "publications": 39,
+    "imageUrl": "/assets/team/priya-patel.jpg",
+    "social": {
+      "linkedin": "priya-patel-optical",
+      "researchgate": "Priya-Patel-3"
+    }
+  },
+  {
+    "id": "member-6",
+    "name": "Dr. Alexander Novak",
+    "role": "Statistical Analyst",
+    "department": "Data Analytics",
+    "email": "a.novak@nasa.gov",
+    "bio": "Expert in statistical methods for exoplanet validation and characterization from survey data.",
+    "expertise": [
+      "Statistical Analysis",
+      "Bayesian Methods",
+      "Data Validation",
+      "Population Studies"
+    ],
+    "education": "Ph.D. in Statistics, UC Berkeley",
+    "publications": 51,
+    "imageUrl": "/assets/team/alexander-novak.jpg",
+    "social": {
+      "twitter": "@AlexNovakStats",
+      "linkedin": "alexander-novak-statistics"
+    }
+  },
+  {
+    "id": "member-7",
+    "name": "Dr. Lisa Thompson",
+    "role": "Astrobiologist",
+    "department": "Astrobiology",
+    "email": "l.thompson@nasa.gov",
+    "bio": "Researching biosignatures and conditions necessary for life on exoplanets.",
+    "expertise": [
+      "Astrobiology",
+      "Biosignatures",
+      "Extremophiles",
+      "Life Detection"
+    ],
+    "education": "Ph.D. in Astrobiology, University of Washington",
+    "publications": 73,
+    "imageUrl": "/assets/team/lisa-thompson.jpg",
+    "social": {
+      "twitter": "@LisaThompsonBio",
+      "linkedin": "lisa-thompson-astrobio"
+    }
+  },
+  {
+    "id": "member-8",
+    "name": "Dr. David Kim",
+    "role": "Software Engineer",
+    "department": "Software Development",
+    "email": "d.kim@nasa.gov",
+    "bio": "Develops scientific software and pipelines for processing exoplanet survey data.",
+    "expertise": [
+      "Scientific Software",
+      "Python Development",
+      "Pipeline Automation",
+      "Cloud Computing"
+    ],
+    "education": "Ph.D. in Computer Science, Carnegie Mellon",
+    "publications": 28,
+    "imageUrl": "/assets/team/david-kim.jpg",
+    "social": {
+      "github": "dkim-nasa",
+      "linkedin": "david-kim-software",
+      "twitter": "@DavidKimDev"
+    }
+  }
+]

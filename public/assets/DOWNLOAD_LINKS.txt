@@ -1,0 +1,107 @@
+NASA Frontend - Direct Download Links for Critical Assets
+==========================================================
+
+CRITICAL: Lens Flare Textures (Required for 3D Scene)
+------------------------------------------------------
+Download these TWO files from Three.js GitHub:
+
+1. lensflare0.png
+   URL: https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/lensflare/lensflare0.png
+   Save to: public/assets/lensflare/lensflare0.png
+
+2. lensflare3.png
+   URL: https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/lensflare/lensflare3.png
+   Save to: public/assets/lensflare/lensflare3.png
+
+
+Quick Download (PowerShell):
+-----------------------------
+cd public/assets/lensflare
+curl -o lensflare0.png https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/lensflare/lensflare0.png
+curl -o lensflare3.png https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/lensflare/lensflare3.png
+
+
+Default Placeholder Images (Temporary)
+---------------------------------------
+For quick testing, use these placeholder services:
+
+Exoplanet Default:
+https://via.placeholder.com/800x600/1a1a2e/eee?text=Exoplanet
+Save as: public/assets/exoplanets/default.jpg
+
+Mission Default:
+https://via.placeholder.com/1200x800/0f3460/eee?text=NASA+Mission
+Save as: public/assets/missions/default.jpg
+
+Satellite Default:
+https://via.placeholder.com/800x600/533483/eee?text=Satellite
+Save as: public/assets/satellites/default.jpg
+
+
+NASA Image Library - Search Links
+----------------------------------
+Use these to find real NASA images:
+
+James Webb Space Telescope:
+https://images.nasa.gov/search?q=james%20webb%20space%20telescope&media_type=image
+
+Hubble Space Telescope:
+https://images.nasa.gov/search?q=hubble%20space%20telescope&media_type=image
+
+ISS (International Space Station):
+https://images.nasa.gov/search?q=international%20space%20station&media_type=image
+
+Exoplanets:
+https://images.nasa.gov/search?q=exoplanet&media_type=image
+
+Mars Rovers:
+https://images.nasa.gov/search?q=mars%20rover&media_type=image
+
+Earth Satellites:
+https://images.nasa.gov/search?q=earth%20observation%20satellite&media_type=image
+
+
+Free Stock Space Images
+------------------------
+Unsplash (Free, High Quality):
+https://unsplash.com/s/photos/space
+https://unsplash.com/s/photos/planet
+https://unsplash.com/s/photos/satellite
+
+Pexels (Free):
+https://www.pexels.com/search/space/
+https://www.pexels.com/search/planet/
+
+
+Quick Setup Steps
+-----------------
+1. Download lensflare0.png and lensflare3.png (CRITICAL!)
+2. Download or create default.jpg for each category
+3. Gradually add specific images as needed
+4. Run: node scripts/download-nasa-images.js (if using Node script)
+
+
+Minimum Viable Setup (3 files)
+-------------------------------
+To get the app running with minimal images:
+
+1. public/assets/lensflare/lensflare0.png  ← MUST HAVE
+2. public/assets/lensflare/lensflare3.png  ← MUST HAVE
+3. Any other images can use defaults or fallback gracefully
+
+
+Copyright & Licensing
+---------------------
+NASA Images: Public domain (no attribution required)
+ESA Images: Usually free with attribution
+Unsplash: Free with attribution
+Pexels: Free with attribution
+
+Always check individual image licenses!
+
+
+Need Help?
+----------
+See README.md in this directory for full documentation.
+See REQUIRED_IMAGES.md for complete file list.
+

@@ -1,0 +1,468 @@
+[
+  {
+    "id": "landsat-9",
+    "name": "Landsat 9",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 2021,
+    "agency": "NASA/USGS",
+    "altitude": 705,
+    "orbitalPeriod": 99,
+    "purpose": "Earth observation and land surface monitoring",
+    "description": "Latest in the Landsat series, monitoring Earth's land surface changes for climate research.",
+    "applications": [
+      "Agriculture monitoring",
+      "Forest management",
+      "Water resource management",
+      "Climate change research"
+    ],
+    "specifications": {
+      "mass": "2,750 kg",
+      "power": "4,200 watts",
+      "dataRate": "384 Mbps",
+      "swathWidth": "185 km"
+    },
+    "sensors": ["OLI-2", "TIRS-2"],
+    "imageUrl": "/assets/satellites/landsat-9.jpg",
+    "position": {
+      "latitude": 40.7128,
+      "longitude": -74.0060,
+      "altitude": 705
+    }
+  },
+  {
+    "id": "sentinel-2a",
+    "name": "Sentinel-2A",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 2015,
+    "agency": "ESA",
+    "altitude": 786,
+    "orbitalPeriod": 100,
+    "purpose": "High-resolution optical imaging for land services",
+    "description": "Part of Copernicus program providing high-resolution optical imagery for land monitoring.",
+    "applications": [
+      "Land cover mapping",
+      "Disaster monitoring",
+      "Vegetation monitoring",
+      "Coastal area monitoring"
+    ],
+    "specifications": {
+      "mass": "1,200 kg",
+      "power": "1,700 watts",
+      "resolution": "10-60 meters",
+      "revisitTime": "5 days (with Sentinel-2B)"
+    },
+    "sensors": ["MSI (Multispectral Instrument)"],
+    "imageUrl": "/assets/satellites/sentinel-2a.jpg",
+    "position": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "altitude": 786
+    }
+  },
+  {
+    "id": "aqua",
+    "name": "Aqua",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 2002,
+    "agency": "NASA",
+    "altitude": 705,
+    "orbitalPeriod": 99,
+    "purpose": "Water cycle and climate monitoring",
+    "description": "Earth Science satellite studying Earth's water cycle and climate system.",
+    "applications": [
+      "Weather forecasting",
+      "Climate research",
+      "Ocean temperature monitoring",
+      "Atmospheric composition"
+    ],
+    "specifications": {
+      "mass": "2,934 kg",
+      "power": "4,600 watts",
+      "dataRate": "150 Mbps",
+      "coverage": "Global every 1-2 days"
+    },
+    "sensors": ["MODIS", "AIRS", "AMSU", "AMSR-E", "CERES"],
+    "imageUrl": "/assets/satellites/aqua.jpg",
+    "position": {
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "altitude": 705
+    }
+  },
+  {
+    "id": "terra",
+    "name": "Terra",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 1999,
+    "agency": "NASA",
+    "altitude": 705,
+    "orbitalPeriod": 99,
+    "purpose": "Earth system monitoring and climate research",
+    "description": "Flagship Earth observation satellite studying land, atmosphere, oceans, and energy balance.",
+    "applications": [
+      "Climate change tracking",
+      "Natural disaster monitoring",
+      "Land surface changes",
+      "Atmospheric composition"
+    ],
+    "specifications": {
+      "mass": "5,190 kg",
+      "power": "2,530 watts",
+      "dataRate": "150 Mbps",
+      "orbitalInclination": "98.2 degrees"
+    },
+    "sensors": ["MODIS", "ASTER", "CERES", "MISR", "MOPITT"],
+    "imageUrl": "/assets/satellites/terra.jpg",
+    "position": {
+      "latitude": -23.5505,
+      "longitude": -46.6333,
+      "altitude": 705
+    }
+  },
+  {
+    "id": "goes-18",
+    "name": "GOES-18",
+    "type": "Weather",
+    "status": "Active",
+    "launchYear": 2022,
+    "agency": "NOAA/NASA",
+    "altitude": 35786,
+    "orbitalPeriod": 1436,
+    "purpose": "Geostationary weather monitoring",
+    "description": "Advanced weather satellite providing real-time monitoring of severe weather and environmental hazards.",
+    "applications": [
+      "Weather forecasting",
+      "Severe storm tracking",
+      "Fire detection",
+      "Lightning mapping"
+    ],
+    "specifications": {
+      "mass": "5,192 kg",
+      "power": "5,000 watts",
+      "imageInterval": "30 seconds to 15 minutes",
+      "channels": "16 spectral bands"
+    },
+    "sensors": ["ABI", "GLM", "SUVI", "EXIS", "SEISS", "MAG"],
+    "imageUrl": "/assets/satellites/goes-18.jpg",
+    "position": {
+      "latitude": 0,
+      "longitude": -137.2,
+      "altitude": 35786
+    }
+  },
+  {
+    "id": "suomi-npp",
+    "name": "Suomi NPP",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 2011,
+    "agency": "NASA/NOAA",
+    "altitude": 824,
+    "orbitalPeriod": 101,
+    "purpose": "Climate and environmental monitoring",
+    "description": "Key Earth observation satellite providing critical data for weather forecasting and climate research.",
+    "applications": [
+      "Long-term climate monitoring",
+      "Weather prediction",
+      "Ocean color monitoring",
+      "Vegetation health assessment"
+    ],
+    "specifications": {
+      "mass": "2,384 kg",
+      "power": "1,850 watts",
+      "dataRate": "150 Mbps",
+      "coverage": "Global twice daily"
+    },
+    "sensors": ["VIIRS", "ATMS", "CrIS", "OMPS", "CERES"],
+    "imageUrl": "/assets/satellites/suomi-npp.jpg",
+    "position": {
+      "latitude": 55.7558,
+      "longitude": 37.6173,
+      "altitude": 824
+    }
+  },
+  {
+    "id": "gps-iif-12",
+    "name": "GPS IIF-12",
+    "type": "Navigation",
+    "status": "Active",
+    "launchYear": 2016,
+    "agency": "US Space Force",
+    "altitude": 20200,
+    "orbitalPeriod": 718,
+    "purpose": "Global positioning and navigation",
+    "description": "Part of GPS constellation providing precise positioning and timing services globally.",
+    "applications": [
+      "Navigation systems",
+      "Surveying",
+      "Time synchronization",
+      "Emergency services"
+    ],
+    "specifications": {
+      "mass": "1,630 kg",
+      "power": "1,800 watts",
+      "signals": "L1, L2, L5",
+      "accuracy": "Better than 7.8 meters"
+    },
+    "sensors": ["Atomic clocks", "Solar sensors", "Earth sensors"],
+    "imageUrl": "/assets/satellites/gps.jpg",
+    "position": {
+      "latitude": 30.0,
+      "longitude": 45.0,
+      "altitude": 20200
+    }
+  },
+  {
+    "id": "worldview-4",
+    "name": "WorldView-4",
+    "type": "Earth Observation",
+    "status": "Decommissioned",
+    "launchYear": 2016,
+    "endYear": 2019,
+    "agency": "DigitalGlobe/Maxar",
+    "altitude": 617,
+    "orbitalPeriod": 97,
+    "purpose": "High-resolution commercial Earth imaging",
+    "description": "Commercial satellite providing very high-resolution imagery for various applications.",
+    "applications": [
+      "Urban planning",
+      "Defense and intelligence",
+      "Disaster response",
+      "Infrastructure monitoring"
+    ],
+    "specifications": {
+      "mass": "2,087 kg",
+      "resolution": "0.31 meters panchromatic",
+      "swathWidth": "13.1 km",
+      "revisitRate": "Less than 1 day"
+    },
+    "sensors": ["SpaceView 110 optical telescope"],
+    "imageUrl": "/assets/satellites/worldview-4.jpg",
+    "position": {
+      "latitude": 0,
+      "longitude": 0,
+      "altitude": 0
+    }
+  },
+  {
+    "id": "icesat-2",
+    "name": "ICESat-2",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 2018,
+    "agency": "NASA",
+    "altitude": 496,
+    "orbitalPeriod": 94,
+    "purpose": "Ice sheet elevation and climate monitoring",
+    "description": "Laser altimetry satellite measuring ice sheet elevation changes with unprecedented precision.",
+    "applications": [
+      "Ice sheet monitoring",
+      "Sea ice thickness measurement",
+      "Vegetation height mapping",
+      "Cloud and aerosol profiling"
+    ],
+    "specifications": {
+      "mass": "1,387 kg",
+      "laserPulseRate": "10,000 per second",
+      "precision": "Better than 1 cm vertical",
+      "coverage": "Polar and temperate regions"
+    },
+    "sensors": ["ATLAS (Advanced Topographic Laser Altimeter System)"],
+    "imageUrl": "/assets/satellites/icesat-2.jpg",
+    "position": {
+      "latitude": -75.0,
+      "longitude": 0.0,
+      "altitude": 496
+    }
+  },
+  {
+    "id": "grace-fo-1",
+    "name": "GRACE-FO 1",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 2018,
+    "agency": "NASA/GFZ",
+    "altitude": 490,
+    "orbitalPeriod": 94,
+    "purpose": "Gravity field measurements and water monitoring",
+    "description": "Twin satellites tracking Earth's water movement and gravity changes with extreme precision.",
+    "applications": [
+      "Groundwater monitoring",
+      "Ice mass loss tracking",
+      "Ocean current mapping",
+      "Solid Earth studies"
+    ],
+    "specifications": {
+      "mass": "580 kg each",
+      "separation": "220 km between twins",
+      "precision": "1 micrometer ranging",
+      "coverage": "Monthly global maps"
+    },
+    "sensors": ["Microwave ranging", "GPS receivers", "Accelerometers"],
+    "imageUrl": "/assets/satellites/grace-fo.jpg",
+    "position": {
+      "latitude": 89.0,
+      "longitude": 0.0,
+      "altitude": 490
+    }
+  },
+  {
+    "id": "sentinel-6",
+    "name": "Sentinel-6 Michael Freilich",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 2020,
+    "agency": "ESA/NASA/NOAA",
+    "altitude": 1336,
+    "orbitalPeriod": 112,
+    "purpose": "Ocean surface topography and sea level monitoring",
+    "description": "Continuing legacy of sea level monitoring for climate change research.",
+    "applications": [
+      "Sea level rise monitoring",
+      "Ocean current tracking",
+      "Climate change research",
+      "Weather forecasting"
+    ],
+    "specifications": {
+      "mass": "1,192 kg",
+      "precision": "Better than 5 cm",
+      "coverage": "95% of ice-free ocean",
+      "repeatCycle": "10 days"
+    },
+    "sensors": ["Poseidon-4 radar altimeter", "AMR-C", "GNSS-POD"],
+    "imageUrl": "/assets/satellites/sentinel-6.jpg",
+    "position": {
+      "latitude": -40.0,
+      "longitude": 180.0,
+      "altitude": 1336
+    }
+  },
+  {
+    "id": "swot",
+    "name": "SWOT",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 2022,
+    "agency": "NASA/CNES",
+    "altitude": 891,
+    "orbitalPeriod": 103,
+    "purpose": "Surface water and ocean topography survey",
+    "description": "Revolutionary satellite measuring Earth's water bodies with unprecedented detail.",
+    "applications": [
+      "Freshwater monitoring",
+      "Ocean circulation studies",
+      "Flood forecasting",
+      "Water resource management"
+    ],
+    "specifications": {
+      "mass": "2,265 kg",
+      "swathWidth": "120 km",
+      "resolution": "10 meters for rivers",
+      "repeatCycle": "21 days"
+    },
+    "sensors": ["KaRIn (Ka-band Radar Interferometer)", "Nadir altimeter", "GPS"],
+    "imageUrl": "/assets/satellites/swot.jpg",
+    "position": {
+      "latitude": 25.0,
+      "longitude": -70.0,
+      "altitude": 891
+    }
+  },
+  {
+    "id": "starlink-4285",
+    "name": "Starlink-4285",
+    "type": "Communications",
+    "status": "Active",
+    "launchYear": 2023,
+    "agency": "SpaceX",
+    "altitude": 550,
+    "orbitalPeriod": 95,
+    "purpose": "Global internet connectivity",
+    "description": "Part of Starlink mega-constellation providing global broadband internet access.",
+    "applications": [
+      "Broadband internet",
+      "Rural connectivity",
+      "Maritime communications",
+      "Aviation connectivity"
+    ],
+    "specifications": {
+      "mass": "305 kg",
+      "bandwidth": "Up to 20 Gbps",
+      "beams": "Multiple user beams",
+      "lifetime": "5 years"
+    },
+    "sensors": ["Phased array antennas", "Star trackers", "GPS"],
+    "imageUrl": "/assets/satellites/starlink.jpg",
+    "position": {
+      "latitude": 53.0,
+      "longitude": -113.0,
+      "altitude": 550
+    }
+  },
+  {
+    "id": "metop-c",
+    "name": "MetOp-C",
+    "type": "Weather",
+    "status": "Active",
+    "launchYear": 2018,
+    "agency": "EUMETSAT/ESA",
+    "altitude": 817,
+    "orbitalPeriod": 101,
+    "purpose": "Meteorological monitoring and forecasting",
+    "description": "Third-generation European polar-orbiting meteorological satellite for weather forecasting.",
+    "applications": [
+      "Numerical weather prediction",
+      "Climate monitoring",
+      "Atmospheric composition",
+      "Ocean surface monitoring"
+    ],
+    "specifications": {
+      "mass": "4,085 kg",
+      "power": "2,200 watts",
+      "dataRate": "2.66 Mbps",
+      "coverage": "Global twice daily"
+    },
+    "sensors": ["AVHRR/3", "IASI", "ASCAT", "GOME-2", "MHS"],
+    "imageUrl": "/assets/satellites/metop-c.jpg",
+    "position": {
+      "latitude": 60.0,
+      "longitude": 10.7522,
+      "altitude": 817
+    }
+  },
+  {
+    "id": "oco-3",
+    "name": "OCO-3",
+    "type": "Earth Observation",
+    "status": "Active",
+    "launchYear": 2019,
+    "agency": "NASA",
+    "altitude": 408,
+    "orbitalPeriod": 93,
+    "purpose": "Carbon dioxide monitoring from ISS",
+    "description": "Mounted on ISS to measure atmospheric carbon dioxide with unprecedented precision.",
+    "applications": [
+      "Carbon cycle research",
+      "Climate change monitoring",
+      "Vegetation carbon flux",
+      "Urban emission tracking"
+    ],
+    "specifications": {
+      "mass": "465 kg",
+      "precision": "0.25% CO2 measurement",
+      "footprint": "1.6 x 2.2 km",
+      "pointingMode": "Target mode capable"
+    },
+    "sensors": ["Three-channel grating spectrometer"],
+    "imageUrl": "/assets/satellites/oco-3.jpg",
+    "position": {
+      "latitude": 0,
+      "longitude": -50.0,
+      "altitude": 408
+    }
+  }
+]

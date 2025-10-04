@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-slate-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-500;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  /* Neon glow effects */
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+  }
+
+  .neon-blue {
+    @apply text-cyan-400;
+  }
+
+  .neon-purple {
+    @apply text-purple-400;
+  }
+
+  /* Spaceship cursor */
+  .spaceship-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2300f5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>'),
+      auto;
+  }
+
+  /* Holographic card effect */
+  .holographic {
+    background: linear-gradient(
+      45deg,
+      rgba(0, 245, 255, 0.1) 0%,
+      rgba(191, 0, 255, 0.1) 25%,
+      rgba(0, 245, 255, 0.1) 50%,
+      rgba(191, 0, 255, 0.1) 75%,
+      rgba(0, 245, 255, 0.1) 100%
+    );
+    background-size: 400% 400%;
+    animation: holographic 3s ease-in-out infinite;
+  }
+
+  @keyframes holographic {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    @apply bg-slate-200 dark:bg-slate-700 animate-pulse rounded;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-neon-blue to-cyan-500 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-neon-blue transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base;
+    display: inline-block;
+    text-decoration: none;
+    min-width: 140px;
+    min-height: 44px; /* Better touch target */
+    touch-action: manipulation;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 sm:px-6 sm:py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg border border-slate-600 hover:border-slate-500 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base;
+    display: inline-block;
+    text-decoration: none;
+    min-width: 140px;
+    min-height: 44px; /* Better touch target */
+    touch-action: manipulation;
+  }
+
+  .btn-small {
+    @apply px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm;
+    min-width: 100px;
+    min-height: 36px;
+  }
+
+  .btn-large {
+    @apply px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg;
+    min-width: 160px;
+    min-height: 52px;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4 sm:p-6 shadow-xl;
+  }
+
+  .card-holographic {
+    @apply card holographic border-neon-blue/30 hover:border-neon-blue/50 transition-all duration-300;
+  }
+
+  .card-compact {
+    @apply p-3 sm:p-4 text-sm;
+  }
+
+  .card-spacious {
+    @apply p-6 sm:p-8 lg:p-10;
+  }
+}
+
+@layer utilities {
+  /* RTL support */
+  .rtl {
+    direction: rtl;
+  }
+
+  .ltr {
+    direction: ltr;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-neon-blue via-neon-purple to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  /* Responsive text sizes */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm md:text-base;
+  }
+
+  .text-responsive-sm {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+
+  .text-responsive-base {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Font families */
+  .font-space {
+    font-family: "Orbitron", monospace;
+  }
+
+  /* Responsive spacing */
+  .spacing-responsive-sm {
+    @apply p-2 sm:p-4 md:p-6;
+  }
+
+  .spacing-responsive-md {
+    @apply p-4 sm:p-6 md:p-8 lg:p-10;
+  }
+
+  .spacing-responsive-lg {
+    @apply p-6 sm:p-8 md:p-12 lg:p-16;
+  }
+
+  /* Touch-friendly utilities */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+
+  .no-touch-zoom {
+    touch-action: manipulation;
+  }
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(0, 245, 255, 0.6);
+    }
+  }
+}

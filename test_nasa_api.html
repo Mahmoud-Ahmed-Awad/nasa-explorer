@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Exoplanet API Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        h1, h2 {
+            color: #4a90e2;
+        }
+        .test-section {
+            background: #16213e;
+            border: 1px solid #0f3460;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        button {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #357abd;
+        }
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        .success {
+            background: #1e5128;
+            border: 1px solid #4caf50;
+            color: #4caf50;
+        }
+        .error {
+            background: #5c0e0e;
+            border: 1px solid #f44336;
+            color: #f44336;
+        }
+        .info {
+            background: #1e3a5f;
+            border: 1px solid #2196f3;
+            color: #2196f3;
+        }
+        .results {
+            background: #0f1419;
+            border: 1px solid #333;
+            padding: 10px;
+            border-radius: 5px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background: #0f3460;
+            color: #4a90e2;
+        }
+        tr:nth-child(even) {
+            background: #1a1a2e;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #0f3460;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a90e2;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 5px;
+        }
+        #loading {
+            display: none;
+            color: #4a90e2;
+            font-style: italic;
+        }
+        .loading {
+            display: inline-block !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌌 NASA Exoplanet Archive API Test</h1>
+    
+    <div class="test-section">
+        <h2>1. Test Direct NASA API Connection</h2>
+        <p>Test the NASA Exoplanet Archive TAP service directly (may fail due to CORS)</p>
+        <button onclick="testDirectNASA()">Test Direct Connection</button>
+        <button onclick="testWithCORS()">Test with CORS Proxy</button>
+        <span id="loading">Loading...</span>
+        <div id="direct-status"></div>
+        <div id="direct-results" class="results" style="display:none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Get Exoplanet Statistics</h2>
+        <p>Fetch overall statistics from NASA database</p>
+        <button onclick="getStatistics()">Get Statistics</button>
+        <div id="stats-status"></div>
+        <div id="stats-grid" class="stats-grid"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Search for Specific Exoplanets</h2>
+        <p>Search for exoplanets by name</p>
+        <input type="text" id="search-input" placeholder="e.g., Kepler-442" value="Kepler-442" style="padding: 8px; margin-right: 10px; background: #0f1419; color: #eee; border: 1px solid #333; border-radius: 4px;">
+        <button onclick="searchExoplanets()">Search</button>
+        <div id="search-status"></div>
+        <div id="search-results" style="display:none;">
+            <table id="search-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Host Star</th>
+                        <th>Distance (pc)</th>
+                        <th>Radius (Earth)</th>
+                        <th>Mass (Earth)</th>
+                        <th>Discovery Year</th>
+                    </tr>
+                </thead>
+                <tbody id="search-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. Get Latest Discoveries</h2>
+        <p>Fetch the most recent exoplanet discoveries</p>
+        <button onclick="getLatestExoplanets()">Get Latest 50</button>
+        <button onclick="getHabitableExoplanets()">Get Habitable Zone Planets</button>
+        <div id="latest-status"></div>
+        <div id="latest-results" style="display:none;">
+            <table id="latest-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Discovery Year</th>
+                        <th>Method</th>
+                        <th>Facility</th>
+                        <th>Radius (Earth)</th>
+                        <th>Temperature (K)</th>
+                    </tr>
+                </thead>
+                <tbody id="latest-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const NASA_BASE = 'https://exoplanetarchive.ipac.caltech.edu/TAP/sync';
+        const CORS_PROXY = 'https://corsproxy.io/?url=';
+
+        function showStatus(elementId, message, type = 'info') {
+            const element = document.getElementById(elementId);
+            element.className = `status ${type}`;
+            element.textContent = message;
+        }
+
+        function showLoading(show = true) {
+            document.getElementById('loading').style.display = show ? 'inline-block' : 'none';
+        }
+
+        async function testDirectNASA() {
+            showLoading(true);
+            showStatus('direct-status', 'Testing direct connection to NASA...', 'info');
+            
+            try {
+                const query = 'SELECT TOP 5 pl_name, hostname, disc_year FROM ps WHERE default_flag = 1 ORDER BY disc_year DESC';
+                const url = `${NASA_BASE}?query=${encodeURIComponent(query)}&format=json`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                showStatus('direct-status', `✅ Success! Found ${data.length} exoplanets`, 'success');
+                document.getElementById('direct-results').style.display = 'block';
+                document.getElementById('direct-results').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                showStatus('direct-status', `❌ Direct connection failed (expected due to CORS): ${error.message}`, 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        async function testWithCORS() {
+            showLoading(true);
+            showStatus('direct-status', 'Testing with CORS proxy...', 'info');
+            
+            try {
+                const query = 'SELECT TOP 10 pl_name, hostname, disc_year, pl_rade, pl_orbper FROM ps WHERE default_flag = 1 ORDER BY disc_year DESC';
+                const nasaUrl = `${NASA_BASE}?query=${encodeURIComponent(query)}&format=json`;
+                const url = CORS_PROXY + encodeURIComponent(nasaUrl);
+                
+                console.log('Fetching:', url);
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                showStatus('direct-status', `✅ Success with CORS proxy! Found ${data.length} exoplanets`, 'success');
+                document.getElementById('direct-results').style.display = 'block';
+                document.getElementById('direct-results').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                showStatus('direct-status', `❌ CORS proxy failed: ${error.message}`, 'error');
+                console.error('Error:', error);
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        async function getStatistics() {
+            showStatus('stats-status', 'Fetching statistics...', 'info');
+            
+            try {
+                const query = 'SELECT COUNT(*) as total_planets, COUNT(DISTINCT hostname) as total_systems, MIN(disc_year) as first_discovery, MAX(disc_year) as latest_discovery FROM ps WHERE default_flag = 1';
+                const nasaUrl = `${NASA_BASE}?query=${encodeURIComponent(query)}&format=json`;
+                const url = CORS_PROXY + encodeURIComponent(nasaUrl);
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data && data.length > 0) {
+                    const stats = data[0];
+                    showStatus('stats-status', '✅ Statistics loaded successfully', 'success');
+                    
+                    const statsGrid = document.getElementById('stats-grid');
+                    statsGrid.innerHTML = `
+                        <div class="stat-card">
+                            <div class="stat-value">${stats.total_planets || 0}</div>
+                            <div class="stat-label">Total Exoplanets</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${stats.total_systems || 0}</div>
+                            <div class="stat-label">Star Systems</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${stats.first_discovery || 'N/A'}</div>
+                            <div class="stat-label">First Discovery</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">${stats.latest_discovery || 'N/A'}</div>
+                            <div class="stat-label">Latest Discovery</div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                showStatus('stats-status', `❌ Failed to fetch statistics: ${error.message}`, 'error');
+            }
+        }
+
+        async function searchExoplanets() {
+            const searchTerm = document.getElementById('search-input').value;
+            if (!searchTerm) {
+                showStatus('search-status', 'Please enter a search term', 'error');
+                return;
+            }
+
+            showStatus('search-status', `Searching for "${searchTerm}"...`, 'info');
+            
+            try {
+                const query = `SELECT TOP 20 pl_name, hostname, sy_dist, pl_rade, pl_bmasse, disc_year FROM ps WHERE default_flag = 1 AND (pl_name LIKE '%${searchTerm}%' OR hostname LIKE '%${searchTerm}%') ORDER BY disc_year DESC`;
+                const nasaUrl = `${NASA_BASE}?query=${encodeURIComponent(query)}&format=json`;
+                const url = CORS_PROXY + encodeURIComponent(nasaUrl);
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data && data.length > 0) {
+                    showStatus('search-status', `✅ Found ${data.length} results`, 'success');
+                    document.getElementById('search-results').style.display = 'block';
+                    
+                    const tbody = document.getElementById('search-tbody');
+                    tbody.innerHTML = data.map(planet => `
+                        <tr>
+                            <td>${planet.pl_name || 'N/A'}</td>
+                            <td>${planet.hostname || 'N/A'}</td>
+                            <td>${planet.sy_dist ? planet.sy_dist.toFixed(2) : 'N/A'}</td>
+                            <td>${planet.pl_rade ? planet.pl_rade.toFixed(2) : 'N/A'}</td>
+                            <td>${planet.pl_bmasse ? planet.pl_bmasse.toFixed(2) : 'N/A'}</td>
+                            <td>${planet.disc_year || 'N/A'}</td>
+                        </tr>
+                    `).join('');
+                } else {
+                    showStatus('search-status', 'No results found', 'info');
+                    document.getElementById('search-results').style.display = 'none';
+                }
+            } catch (error) {
+                showStatus('search-status', `❌ Search failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function getLatestExoplanets() {
+            showStatus('latest-status', 'Fetching latest discoveries...', 'info');
+            
+            try {
+                const query = 'SELECT TOP 50 pl_name, disc_year, discoverymethod, disc_facility, pl_rade, pl_eqt FROM ps WHERE default_flag = 1 ORDER BY disc_year DESC, rowid DESC';
+                const nasaUrl = `${NASA_BASE}?query=${encodeURIComponent(query)}&format=json`;
+                const url = CORS_PROXY + encodeURIComponent(nasaUrl);
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                displayLatestResults(data, 'Latest discoveries');
+            } catch (error) {
+                showStatus('latest-status', `❌ Failed to fetch latest: ${error.message}`, 'error');
+            }
+        }
+
+        async function getHabitableExoplanets() {
+            showStatus('latest-status', 'Fetching potentially habitable exoplanets...', 'info');
+            
+            try {
+                const query = 'SELECT TOP 50 pl_name, disc_year, discoverymethod, disc_facility, pl_rade, pl_eqt FROM ps WHERE default_flag = 1 AND pl_rade BETWEEN 0.5 AND 2.0 AND pl_eqt BETWEEN 180 AND 320 ORDER BY pl_eqt ASC';
+                const nasaUrl = `${NASA_BASE}?query=${encodeURIComponent(query)}&format=json`;
+                const url = CORS_PROXY + encodeURIComponent(nasaUrl);
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                displayLatestResults(data, 'Potentially habitable planets');
+            } catch (error) {
+                showStatus('latest-status', `❌ Failed to fetch habitable planets: ${error.message}`, 'error');
+            }
+        }
+
+        function displayLatestResults(data, title) {
+            if (data && data.length > 0) {
+                showStatus('latest-status', `✅ ${title}: Found ${data.length} planets`, 'success');
+                document.getElementById('latest-results').style.display = 'block';
+                
+                const tbody = document.getElementById('latest-tbody');
+                tbody.innerHTML = data.map(planet => `
+                    <tr>
+                        <td>${planet.pl_name || 'N/A'}</td>
+                        <td>${planet.disc_year || 'N/A'}</td>
+                        <td>${planet.discoverymethod || 'N/A'}</td>
+                        <td>${planet.disc_facility || 'N/A'}</td>
+                        <td>${planet.pl_rade ? planet.pl_rade.toFixed(2) : 'N/A'}</td>
+                        <td>${planet.pl_eqt ? Math.round(planet.pl_eqt) : 'N/A'}</td>
+                    </tr>
+                `).join('');
+            } else {
+                showStatus('latest-status', 'No results found', 'info');
+                document.getElementById('latest-results').style.display = 'none';
+            }
+        }
+
+        // Test on load
+        window.onload = () => {
+            console.log('NASA Exoplanet API Test Page Ready');
+            console.log('NASA API Base:', NASA_BASE);
+            console.log('CORS Proxy:', CORS_PROXY);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APIs Test - All Pages</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+        }
+        .api-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .api-card {
+            background: rgba(22, 33, 62, 0.9);
+            border: 1px solid #0f3460;
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .api-card h2 {
+            color: #4a90e2;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .api-card h2 span {
+            font-size: 1.5em;
+        }
+        button {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .success {
+            background: rgba(30, 81, 40, 0.8);
+            border: 1px solid #4caf50;
+            color: #4caf50;
+        }
+        .error {
+            background: rgba(92, 14, 14, 0.8);
+            border: 1px solid #f44336;
+            color: #f44336;
+        }
+        .info {
+            background: rgba(30, 58, 95, 0.8);
+            border: 1px solid #2196f3;
+            color: #2196f3;
+        }
+        .results {
+            background: rgba(15, 20, 25, 0.9);
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 6px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 10px;
+        }
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .stat-box {
+            background: rgba(15, 52, 96, 0.3);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .stat-value {
+            font-size: 24px;
+            color: #4a90e2;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(74, 144, 226, 0.3);
+            border-radius: 50%;
+            border-top-color: #4a90e2;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .test-all-btn {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            font-size: 16px;
+            padding: 12px 30px;
+            margin: 20px auto;
+            display: block;
+        }
+        .summary {
+            background: rgba(22, 33, 62, 0.9);
+            border: 2px solid #4a90e2;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌌 NASA APIs Integration Test - All Pages</h1>
+    
+    <button class="test-all-btn" onclick="testAllAPIs()">🚀 Test All NASA APIs</button>
+
+    <div class="summary" id="summary" style="display:none;">
+        <h2>Test Summary</h2>
+        <div id="summary-content"></div>
+    </div>
+
+    <div class="api-grid">
+        <!-- Exoplanets API -->
+        <div class="api-card">
+            <h2><span>🪐</span> Exoplanets API</h2>
+            <p>NASA Exoplanet Archive TAP Service</p>
+            <button onclick="testExoplanets()">Test Exoplanets</button>
+            <button onclick="testHabitableExoplanets()">Habitable Planets</button>
+            <button onclick="testExoplanetStats()">Statistics</button>
+            <div id="exo-status"></div>
+            <div class="stats-container" id="exo-stats" style="display:none;"></div>
+            <div id="exo-results" class="results" style="display:none;"></div>
+        </div>
+
+        <!-- Missions API -->
+        <div class="api-card">
+            <h2><span>🚀</span> Missions API</h2>
+            <p>NASA Mission Data (APOD, Mars Rovers, etc.)</p>
+            <button onclick="testMissions()">Test Missions</button>
+            <button onclick="testMarsRovers()">Mars Rovers</button>
+            <button onclick="testMissionStats()">Statistics</button>
+            <div id="mission-status"></div>
+            <div class="stats-container" id="mission-stats" style="display:none;"></div>
+            <div id="mission-results" class="results" style="display:none;"></div>
+        </div>
+
+        <!-- Satellites API -->
+        <div class="api-card">
+            <h2><span>🛰️</span> Satellites API</h2>
+            <p>Satellites, ISS, NEOs Tracking</p>
+            <button onclick="testSatellites()">Test Satellites</button>
+            <button onclick="testNEOs()">Near Earth Objects</button>
+            <button onclick="testISS()">ISS Position</button>
+            <button onclick="testSatelliteStats()">Statistics</button>
+            <div id="sat-status"></div>
+            <div class="stats-container" id="sat-stats" style="display:none;"></div>
+            <div id="sat-results" class="results" style="display:none;"></div>
+        </div>
+
+        <!-- Dashboard Stats -->
+        <div class="api-card">
+            <h2><span>📊</span> Dashboard Stats</h2>
+            <p>Combined statistics from all NASA sources</p>
+            <button onclick="testDashboard()">Test Dashboard Stats</button>
+            <div id="dash-status"></div>
+            <div class="stats-container" id="dash-stats" style="display:none;"></div>
+            <div id="dash-results" class="results" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import API services
+        import { apiService } from './src/services/api.js';
+        
+        // Make functions available globally
+        window.apiService = apiService;
+        
+        window.showStatus = function(elementId, message, type = 'info') {
+            const element = document.getElementById(elementId);
+            element.className = `status ${type}`;
+            element.innerHTML = message;
+        }
+
+        window.showResults = function(elementId, data) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.textContent = JSON.stringify(data, null, 2);
+        }
+
+        window.showStats = function(containerId, stats) {
+            const container = document.getElementById(containerId);
+            container.style.display = 'grid';
+            container.innerHTML = Object.entries(stats).slice(0, 4).map(([key, value]) => `
+                <div class="stat-box">
+                    <div class="stat-label">${key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                    <div class="stat-value">${typeof value === 'number' ? value.toLocaleString() : value}</div>
+                </div>
+            `).join('');
+        }
+
+        // Test Exoplanets
+        window.testExoplanets = async function() {
+            showStatus('exo-status', '<span class="loading"></span> Fetching exoplanets...', 'info');
+            try {
+                const response = await apiService.getExoplanets({ limit: 50 });
+                const data = response.data;
+                showStatus('exo-status', `✅ Success! Found ${data.length} exoplanets`, 'success');
+                showResults('exo-results', data.slice(0, 5));
+            } catch (error) {
+                showStatus('exo-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        window.testHabitableExoplanets = async function() {
+            showStatus('exo-status', '<span class="loading"></span> Fetching habitable planets...', 'info');
+            try {
+                const response = await apiService.getHabitableExoplanets(20);
+                const data = response.data;
+                showStatus('exo-status', `✅ Found ${data.length} potentially habitable planets`, 'success');
+                showResults('exo-results', data.slice(0, 5));
+            } catch (error) {
+                showStatus('exo-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        window.testExoplanetStats = async function() {
+            showStatus('exo-status', '<span class="loading"></span> Fetching statistics...', 'info');
+            try {
+                const response = await apiService.getExoplanetStatistics();
+                showStatus('exo-status', '✅ Statistics loaded', 'success');
+                showStats('exo-stats', response.data);
+                showResults('exo-results', response.data);
+            } catch (error) {
+                showStatus('exo-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        // Test Missions
+        window.testMissions = async function() {
+            showStatus('mission-status', '<span class="loading"></span> Fetching NASA missions...', 'info');
+            try {
+                const response = await apiService.getMissions();
+                const data = response.data;
+                showStatus('mission-status', `✅ Success! Found ${data.length} missions`, 'success');
+                showResults('mission-results', data.slice(0, 5));
+            } catch (error) {
+                showStatus('mission-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        window.testMarsRovers = async function() {
+            showStatus('mission-status', '<span class="loading"></span> Fetching Mars rover missions...', 'info');
+            try {
+                const response = await apiService.getMarsRoverMissions();
+                const data = response.data;
+                showStatus('mission-status', `✅ Found ${data.length} Mars rover missions`, 'success');
+                showResults('mission-results', data);
+            } catch (error) {
+                showStatus('mission-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        window.testMissionStats = async function() {
+            showStatus('mission-status', '<span class="loading"></span> Fetching statistics...', 'info');
+            try {
+                const response = await apiService.getMissionStatistics();
+                showStatus('mission-status', '✅ Statistics loaded', 'success');
+                showStats('mission-stats', response.data);
+                showResults('mission-results', response.data);
+            } catch (error) {
+                showStatus('mission-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        // Test Satellites
+        window.testSatellites = async function() {
+            showStatus('sat-status', '<span class="loading"></span> Fetching satellites...', 'info');
+            try {
+                const response = await apiService.getSatellites();
+                const data = response.data;
+                showStatus('sat-status', `✅ Success! Found ${data.length} satellites`, 'success');
+                showResults('sat-results', data.slice(0, 5));
+            } catch (error) {
+                showStatus('sat-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        window.testNEOs = async function() {
+            showStatus('sat-status', '<span class="loading"></span> Fetching Near Earth Objects...', 'info');
+            try {
+                const response = await apiService.getNEOs(10);
+                const data = response.data;
+                showStatus('sat-status', `✅ Found ${data.length} NEOs`, 'success');
+                showResults('sat-results', data);
+            } catch (error) {
+                showStatus('sat-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        window.testISS = async function() {
+            showStatus('sat-status', '<span class="loading"></span> Fetching ISS position...', 'info');
+            try {
+                const response = await apiService.getSpaceStations();
+                const data = response.data;
+                const iss = data.find(s => s.id === 'iss');
+                if (iss) {
+                    showStatus('sat-status', `✅ ISS Position: Lat ${iss.position.latitude.toFixed(2)}°, Lon ${iss.position.longitude.toFixed(2)}°`, 'success');
+                    showResults('sat-results', [iss]);
+                } else {
+                    showStatus('sat-status', '⚠️ ISS data not found', 'error');
+                }
+            } catch (error) {
+                showStatus('sat-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        window.testSatelliteStats = async function() {
+            showStatus('sat-status', '<span class="loading"></span> Fetching statistics...', 'info');
+            try {
+                const response = await apiService.getSatelliteStatistics();
+                showStatus('sat-status', '✅ Statistics loaded', 'success');
+                showStats('sat-stats', response.data);
+                showResults('sat-results', response.data);
+            } catch (error) {
+                showStatus('sat-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        // Test Dashboard
+        window.testDashboard = async function() {
+            showStatus('dash-status', '<span class="loading"></span> Fetching dashboard stats...', 'info');
+            try {
+                const response = await apiService.getDashboardStats();
+                const data = response.data;
+                showStatus('dash-status', `✅ Dashboard stats loaded`, 'success');
+                
+                // Show stats
+                if (data.stats && data.stats.length > 0) {
+                    const statsObj = {};
+                    data.stats.forEach(stat => {
+                        statsObj[stat.label] = stat.value;
+                    });
+                    showStats('dash-stats', statsObj);
+                }
+                
+                showResults('dash-results', data);
+            } catch (error) {
+                showStatus('dash-status', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        // Test All APIs
+        window.testAllAPIs = async function() {
+            console.log('🚀 Testing all NASA APIs...');
+            
+            const tests = [
+                { name: 'Exoplanets', fn: testExoplanets },
+                { name: 'Missions', fn: testMissions },
+                { name: 'Satellites', fn: testSatellites },
+                { name: 'Dashboard', fn: testDashboard }
+            ];
+            
+            const results = [];
+            
+            for (const test of tests) {
+                console.log(`Testing ${test.name}...`);
+                try {
+                    await test.fn();
+                    results.push({ name: test.name, status: 'Success ✅' });
+                } catch (error) {
+                    results.push({ name: test.name, status: 'Failed ❌', error: error.message });
+                }
+                // Wait a bit between tests
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+            
+            // Show summary
+            const summary = document.getElementById('summary');
+            summary.style.display = 'block';
+            
+            const successCount = results.filter(r => r.status.includes('Success')).length;
+            const content = `
+                <div class="stat-value" style="font-size: 36px; margin: 20px 0;">
+                    ${successCount} / ${results.length} APIs Working
+                </div>
+                <div style="text-align: left; display: inline-block;">
+                    ${results.map(r => `
+                        <div style="margin: 10px 0; font-size: 16px;">
+                            ${r.status} ${r.name} ${r.error ? `- ${r.error}` : ''}
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            document.getElementById('summary-content').innerHTML = content;
+        }
+
+        // Log ready state
+        console.log('🌌 NASA API Test Page Ready');
+        console.log('Available functions:', Object.keys(window).filter(k => k.startsWith('test')));
+    </script>
+</body>
+</html>
