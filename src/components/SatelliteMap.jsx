@@ -183,14 +183,14 @@ const SatelliteMap = ({ satellites, selectedSatellite, onSatelliteSelect }) => {
 
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Type:</span>
+                        <span className="text-slate-400">Type:</span>
                         <span className="font-medium text-slate-800">
                           {satellite.type}
                         </span>
                       </div>
 
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Status:</span>
+                        <span className="text-slate-400">Status:</span>
                         <span
                           className={`font-medium ${
                             satellite.status === "Active"
@@ -205,7 +205,7 @@ const SatelliteMap = ({ satellites, selectedSatellite, onSatelliteSelect }) => {
                       </div>
 
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Altitude:</span>
+                        <span className="text-slate-400">Altitude:</span>
                         <span className="font-medium text-slate-800">
                           {satellite.altitude
                             ? `${satellite.altitude.toLocaleString()} km`
@@ -214,7 +214,7 @@ const SatelliteMap = ({ satellites, selectedSatellite, onSatelliteSelect }) => {
                       </div>
 
                       <div className="flex justify-between">
-                        <span className="text-slate-600">Agency:</span>
+                        <span className="text-slate-400">Agency:</span>
                         <span className="font-medium text-slate-800">
                           {satellite.agency}
                         </span>
@@ -222,7 +222,7 @@ const SatelliteMap = ({ satellites, selectedSatellite, onSatelliteSelect }) => {
 
                       {satellite.launchYear && (
                         <div className="flex justify-between">
-                          <span className="text-slate-600">Launch Year:</span>
+                          <span className="text-slate-400">Launch Year:</span>
                           <span className="font-medium text-slate-800">
                             {satellite.launchYear}
                           </span>
@@ -231,7 +231,7 @@ const SatelliteMap = ({ satellites, selectedSatellite, onSatelliteSelect }) => {
 
                       {satellite.purpose && (
                         <div className="mt-2">
-                          <span className="text-slate-600 text-xs">
+                          <span className="text-slate-400 text-xs">
                             Purpose:
                           </span>
                           <p className="text-slate-700 text-xs mt-1">

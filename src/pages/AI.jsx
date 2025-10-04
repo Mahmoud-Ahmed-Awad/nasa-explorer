@@ -86,7 +86,7 @@ const AI = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+    <div className="min-h-screen bg-slate-900 py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -98,9 +98,7 @@ const AI = () => {
             <h1 className="text-4xl font-bold text-gradient font-space mb-4">
               {t("ai.title")}
             </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-400">
-              {t("ai.subtitle")}
-            </p>
+            <p className="text-xl text-slate-400">{t("ai.subtitle")}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">

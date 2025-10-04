@@ -81,7 +81,7 @@ const Satellites = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+      <div className="min-h-screen bg-slate-900 py-20">
         <LoadingSpinner text="Loading satellites..." />
       </div>
     );
@@ -89,19 +89,19 @@ const Satellites = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+      <div className="min-h-screen bg-slate-900 py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-red-500 text-xl mb-4">
             Failed to load satellites
           </div>
-          <p className="text-slate-600 dark:text-slate-400">{error.message}</p>
+          <p className="text-slate-400">{error.message}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+    <div className="min-h-screen bg-slate-900 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -113,9 +113,7 @@ const Satellites = () => {
             <h1 className="text-4xl font-bold text-gradient font-space mb-4">
               {t("satellites.title")}
             </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-400">
-              {t("satellites.subtitle")}
-            </p>
+            <p className="text-xl text-slate-400">{t("satellites.subtitle")}</p>
 
             {/* Data Source Indicator */}
             <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/50 rounded-full">

@@ -130,7 +130,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-16 sm:py-20">
+    <div className="min-h-screen bg-slate-900 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -142,7 +142,7 @@ const Dashboard = () => {
             <h1 className="text-responsive-2xl font-bold text-gradient font-space mb-4">
               {t("nav.dashboard")}
             </h1>
-            <p className="text-responsive-lg text-slate-600 dark:text-slate-400 px-4 sm:px-0">
+            <p className="text-responsive-lg text-slate-400 px-4 sm:px-0">
               Welcome back! Here's your space exploration progress.
             </p>
           </div>

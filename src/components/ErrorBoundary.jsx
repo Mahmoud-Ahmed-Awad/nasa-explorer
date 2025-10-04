@@ -26,7 +26,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       // Fallback UI
       return (
-        <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center px-4">
+        <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4">
           <div className="max-w-md w-full text-center">
             <div className="card">
               <Icon name="rocket" size={48} className="text-white mb-4" />

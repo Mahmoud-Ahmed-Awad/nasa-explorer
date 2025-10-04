@@ -66,7 +66,7 @@ const ExoplanetDetails = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+      <div className="min-h-screen bg-slate-900 py-20">
         <LoadingSpinner text="Loading exoplanet details..." />
       </div>
     );
@@ -74,14 +74,12 @@ const ExoplanetDetails = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+      <div className="min-h-screen bg-slate-900 py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-red-500 text-xl mb-4">
             Failed to load exoplanet details
           </div>
-          <p className="text-slate-600 dark:text-slate-400 mb-6">
-            {error.message}
-          </p>
+          <p className="text-slate-400 mb-6">{error.message}</p>
           <button
             onClick={() => navigate("/exoplanets")}
             className="btn-primary"
@@ -95,10 +93,10 @@ const ExoplanetDetails = () => {
 
   if (!exoplanet) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+      <div className="min-h-screen bg-slate-900 py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-red-500 text-xl mb-4">Exoplanet not found</div>
-          <p className="text-slate-600 dark:text-slate-400 mb-6">
+          <p className="text-slate-400 mb-6">
             The exoplanet "{planetId}" could not be found in our database.
           </p>
           <button
@@ -115,7 +113,7 @@ const ExoplanetDetails = () => {
   const habitableInfo = getHabitableZoneInfo(exoplanet);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+    <div className="min-h-screen bg-slate-900 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -155,7 +153,7 @@ const ExoplanetDetails = () => {
               <h1 className="text-5xl font-bold text-gradient font-space mb-4">
                 {exoplanet.name}
               </h1>
-              <p className="text-2xl text-slate-600 dark:text-slate-400">
+              <p className="text-2xl text-slate-400">
                 {exoplanet.type} Exoplanet
               </p>
             </div>

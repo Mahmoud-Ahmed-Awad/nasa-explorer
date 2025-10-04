@@ -23,9 +23,17 @@ export const ThemeProvider = ({ children }) => {
     if (savedSettings) {
       try {
         const parsed = JSON.parse(savedSettings);
-        setSettings({ ...DEFAULT_SETTINGS, ...parsed });
+        // Only keep the properties we still support
+        const validSettings = {
+          enableCursor: parsed.enableCursor ?? DEFAULT_SETTINGS.enableCursor,
+          enableSounds: parsed.enableSounds ?? DEFAULT_SETTINGS.enableSounds,
+        };
+        setSettings({ ...DEFAULT_SETTINGS, ...validSettings });
       } catch (error) {
         console.error("Error loading theme settings:", error);
+        // Clear invalid localStorage data
+        localStorage.removeItem("nasa-explorer-theme-settings");
+        setSettings(DEFAULT_SETTINGS);
       }
     }
   }, []);
