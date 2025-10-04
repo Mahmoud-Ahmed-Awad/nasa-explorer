@@ -161,7 +161,7 @@ const Exoplanets = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+      <div className="min-h-screen bg-slate-900 py-20">
         <LoadingSpinner text="Loading exoplanets..." />
       </div>
     );
@@ -169,19 +169,19 @@ const Exoplanets = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+      <div className="min-h-screen bg-slate-900 py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="text-red-500 text-xl mb-4">
             Failed to load exoplanets
           </div>
-          <p className="text-slate-600 dark:text-slate-400">{error.message}</p>
+          <p className="text-slate-400">{error.message}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
+    <div className="min-h-screen bg-slate-900 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -193,9 +193,7 @@ const Exoplanets = () => {
             <h1 className="text-4xl font-bold text-gradient font-space mb-4">
               {t("exoplanets.title")}
             </h1>
-            <p className="text-xl text-slate-600 dark:text-slate-400">
-              {t("exoplanets.subtitle")}
-            </p>
+            <p className="text-xl text-slate-400">{t("exoplanets.subtitle")}</p>
 
             {/* Data Source Indicator */}
             <motion.div
@@ -480,7 +478,7 @@ const Exoplanets = () => {
 
           {/* Results */}
           <div className="text-center mb-6">
-            <p className="text-slate-600 dark:text-slate-400">
+            <p className="text-slate-400">
               Showing {filteredExoplanets.length} of {exoplanets?.length || 0}{" "}
               exoplanets
             </p>

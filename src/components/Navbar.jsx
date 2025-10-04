@@ -4,13 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@contexts/I18nContext";
 import { useTheme } from "@contexts/ThemeContext";
 import LanguageSwitcher from "./LanguageSwitcher";
-import ThemeToggle from "./ThemeToggle";
 import TimerWidget from "./TimerWidget";
 import Icon from "./UI/Icon";
 
 const Navbar = () => {
   const { t } = useI18n();
-  const { currentTheme } = useTheme();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -172,7 +170,7 @@ const Navbar = () => {
                   className={`relative flex items-center px-3 xl:px-4 py-2 rounded-lg text-xs xl:text-sm font-medium transition-all duration-300 touch-target group ${
                     isActive(item.path)
                       ? "text-neon-blue bg-white/10 shadow-lg shadow-neon-blue/20"
-                      : "text-slate-700 dark:text-slate-300 hover:text-neon-blue hover:bg-white/5"
+                      : "text-slate-300 hover:text-neon-blue hover:bg-white/5"
                   }`}
                   title={item.description}
                 >
@@ -199,7 +197,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(true)}
-              className="flex items-center px-3 xl:px-4 py-2 rounded-lg text-xs xl:text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-neon-blue hover:bg-white/5 transition-all duration-300 touch-target"
+              className="flex items-center px-3 xl:px-4 py-2 rounded-lg text-xs xl:text-sm font-medium text-slate-300 hover:text-neon-blue hover:bg-white/5 transition-all duration-300 touch-target"
             >
               <span className="mr-1">⋯</span>
               <span>More</span>
@@ -238,9 +236,6 @@ const Navbar = () => {
 
             {/* Language Switcher */}
             <LanguageSwitcher />
-
-            {/* Theme Toggle */}
-            {/* <ThemeToggle /> */}
 
             {/* Settings Link */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

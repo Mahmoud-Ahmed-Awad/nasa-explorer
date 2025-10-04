@@ -65,7 +65,7 @@ function App() {
       <I18nProvider>
         <ThemeProvider>
           <ErrorBoundary>
-            <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+            <div className="min-h-screen bg-slate-900 transition-colors duration-300">
               <Navbar />
 
               <main className="pt-16">
