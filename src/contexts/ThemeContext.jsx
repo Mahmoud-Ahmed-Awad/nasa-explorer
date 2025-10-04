@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react'
 
 const DEFAULT_SETTINGS = {
-  theme: 'system', // 'light', 'dark', 'system'
+  theme: 'dark', // 'light', 'dark', 'system'
   autoSwitch: true,
   manualTimeOverride: null, // { time: '12:00', timezone: 'America/New_York' }
   timezone: 'America/New_York',
