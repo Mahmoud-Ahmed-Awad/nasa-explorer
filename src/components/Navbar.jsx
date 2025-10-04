@@ -409,7 +409,7 @@ const Navbar = () => {
                 {/* Header */}
                 <div className="relative flex items-center justify-between p-4 border-b border-white/20">
                   <div className="flex items-center space-x-2">
-                    {<img src="/logo.png" className="w-8 h-8" /> || (
+                    {<img src="/logo.png" className="w-12 h-12" /> || (
                       <div className="w-8 h-8 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg flex items-center justify-center">
                         <span className="text-white font-bold text-lg">N</span>
                       </div>
