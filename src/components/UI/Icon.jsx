@@ -34,6 +34,11 @@ import {
   Clock,
   Send,
   CheckCircle,
+  Leaf,
+  Droplets,
+  Ruler,
+  RotateCcw,
+  Triangle,
 } from "lucide-react";
 import { FaMeteor, FaRobot } from "react-icons/fa";
 
@@ -70,6 +75,17 @@ const Icon = ({ name, size = 24, className = "", ...props }) => {
 
     // Snowflake for exoplanet details
     snowflake: Snowflake,
+
+    // Plant and nature icons
+    leaf: Leaf,
+    droplets: Droplets,
+
+    // Measurement icons
+    ruler: Ruler,
+
+    // Motion and geometry icons
+    rotateCcw: RotateCcw,
+    triangle: Triangle,
 
     // Achievement icons
     trophy: Trophy,

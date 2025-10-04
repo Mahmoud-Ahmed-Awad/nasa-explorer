@@ -53,13 +53,13 @@ const ExoplanetDetails = () => {
       return {
         status: "In Habitable Zone",
         color: "text-green-400 bg-green-500/20",
-        icon: "🌱",
+        icon: <Icon name="leaf" size={20} className="text-green-400" />,
       };
     } else {
       return {
         status: "Outside Habitable Zone",
         color: "text-red-400 bg-red-500/20",
-        icon: "snowflake",
+        icon: <Icon name="snowflake" size={20} className="text-cyan-400" />,
       };
     }
   };
@@ -145,9 +145,9 @@ const ExoplanetDetails = () => {
             <div className="mb-6">
               <div className="text-8xl mb-4">
                 {exoplanet.habitable ? (
-                  <Icon name="globe" size={20} />
+                  <Icon name="globe" size={80} />
                 ) : (
-                  <Icon name="satellite" size={20} />
+                  <Icon name="snowflake" size={80} className="text-cyan-400" />
                 )}
               </div>
               <h1 className="text-5xl font-bold text-gradient font-space mb-4">
@@ -169,7 +169,12 @@ const ExoplanetDetails = () => {
               <span
                 className={`px-4 py-2 rounded-full text-sm font-medium ${habitableInfo.color}`}
               >
-                {habitableInfo.icon} {habitableInfo.status}
+                {typeof habitableInfo.icon === "string" ? (
+                  <span className="mr-2">{habitableInfo.icon}</span>
+                ) : (
+                  <span className="mr-2">{habitableInfo.icon}</span>
+                )}
+                {habitableInfo.status}
               </span>
             </div>
           </div>
@@ -190,7 +195,7 @@ const ExoplanetDetails = () => {
               </div>
 
               <div className="bg-slate-700/50 rounded-lg p-6 text-center">
-                <div className="text-3xl mb-2">📏</div>
+                <Icon name="ruler" size={24} className="mb-2" />
                 <div className="text-slate-400 text-sm mb-1">Radius</div>
                 <div className="text-white font-bold text-2xl">
                   {formatNumber(exoplanet.radius)} R⊕
@@ -324,7 +329,13 @@ const ExoplanetDetails = () => {
               </h2>
               <div className="bg-slate-700/50 rounded-lg p-6">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="text-5xl">{habitableInfo.icon}</div>
+                  <div className="text-5xl">
+                    {typeof habitableInfo.icon === "string" ? (
+                      <span className="text-5xl">{habitableInfo.icon}</span>
+                    ) : (
+                      habitableInfo.icon
+                    )}
+                  </div>
                   <div>
                     <h3 className="text-xl font-semibold text-white">
                       {habitableInfo.status}
@@ -345,7 +356,7 @@ const ExoplanetDetails = () => {
                       <div className="text-white font-medium">Suitable</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl mb-2">💧</div>
+                      <Icon name="droplets" size={24} className="mb-2" />
                       <div className="text-sm text-slate-400">
                         Water Potential
                       </div>
@@ -371,7 +382,7 @@ const ExoplanetDetails = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-slate-700/50 rounded-lg p-4 text-center">
-                <div className="text-2xl mb-2">🔄</div>
+                <Icon name="rotateCcw" size={20} className="mb-2" />
                 <div className="text-slate-400 text-sm mb-1">
                   Orbital Period
                 </div>
@@ -391,7 +402,7 @@ const ExoplanetDetails = () => {
               </div>
 
               <div className="bg-slate-700/50 rounded-lg p-4 text-center">
-                <div className="text-2xl mb-2">📐</div>
+                <Icon name="triangle" size={20} className="mb-2" />
                 <div className="text-slate-400 text-sm mb-1">Eccentricity</div>
                 <div className="text-white font-semibold text-lg">
                   {exoplanet.eccentricity
@@ -401,7 +412,7 @@ const ExoplanetDetails = () => {
               </div>
 
               <div className="bg-slate-700/50 rounded-lg p-4 text-center">
-                <div className="text-2xl mb-2">📏</div>
+                <Icon name="ruler" size={20} className="mb-2" />
                 <div className="text-slate-400 text-sm mb-1">
                   Semi-Major Axis
                 </div>
