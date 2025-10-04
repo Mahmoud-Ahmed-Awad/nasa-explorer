@@ -295,12 +295,19 @@ const Contact = () => {
                       <h3 className="text-white font-bold text-xl mb-2">
                         Email
                       </h3>
-                      <p className="text-slate-300 hover:text-neon-blue transition-colors duration-300 text-lg mb-1">
-                        contact@nasa-explorer.com
-                      </p>
-                      <p className="text-slate-300 hover:text-neon-blue transition-colors duration-300 text-lg">
-                        support@nasa-explorer.com
-                      </p>
+                      <a
+                        href="mailto:mahmodawadahmed@gmail.com"
+                        className="text-slate-300 hover:text-neon-blue transition-colors duration-300 text-lg mb-1"
+                      >
+                        mahmodawadahmed@gmail.com
+                      </a>
+                      <br />
+                      <a
+                        href="mailto:youssef012239@gmail.com"
+                        className="text-slate-300 hover:text-neon-blue transition-colors duration-300 text-lg"
+                      >
+                        youssef012239@gmail.com
+                      </a>
                     </div>
                   </motion.div>
 
@@ -322,9 +329,12 @@ const Contact = () => {
                       <h3 className="text-white font-bold text-xl mb-2">
                         Phone
                       </h3>
-                      <p className="text-slate-300 hover:text-neon-purple transition-colors duration-300 text-lg mb-2">
-                        +1 (555) 123-4567
-                      </p>
+                      <a
+                        href="tel:+201003025594"
+                        className="text-slate-300 hover:text-neon-purple transition-colors duration-300 text-lg mb-2"
+                      >
+                        +20 100 302 5594
+                      </a>
                       <div className="flex items-center space-x-3">
                         <Icon
                           name="clock"
